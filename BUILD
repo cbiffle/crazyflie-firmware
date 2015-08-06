@@ -50,7 +50,6 @@ c_binary('cf2',
     'utils/src/cfassert.c',
     'utils/src/configblockeeprom.c',
     'utils/src/crc.c',
-    'utils/src/eprintf.c',
     'utils/src/filter.c',
     'utils/src/fp16.c',
 
@@ -115,6 +114,7 @@ c_binary('cf2',
     '//lib/CMSIS:startup',
     '//lib/FreeRTOS',
     '//deck',
+    '//utils:eprintf',
   ],
 
   extra = {
