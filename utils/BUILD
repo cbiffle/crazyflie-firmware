@@ -4,6 +4,16 @@ c_library('utils_headers',
   },
 )
 
+c_library('cfassert',
+  sources = [
+    'src/cfassert.c',
+  ],
+  deps = [
+    ':utils_headers',
+    '//drivers:led',
+  ],
+)
+
 c_library('core',
   sources = [
     'src/crc.c',
