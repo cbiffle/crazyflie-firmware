@@ -27,8 +27,8 @@ includes = [
   'lib/STM32_USB_OTG_Driver/inc',
 ]
 
-c_binary('cf2',
-  environment = 'cf2',
+c_library('cf2lib',
+
   sources = [
     'init/main.c',
 
@@ -106,13 +106,19 @@ c_binary('cf2',
 
   deps = [
     '//lib/CMSIS',
-    '//lib/CMSIS:startup',
     '//lib/FreeRTOS',
     '//deck',
     '//utils:core',
     '//utils:version',
   ],
+)
 
+c_binary('cf2',
+  environment = 'cf2',
+  deps = [
+    ':cf2lib',
+    '//lib/CMSIS:startup',
+  ],
   extra = {
     'c_flags': ['-I %(ROOT)s/' + inc for inc in includes] + [
       '-DSTM32F4XX',
@@ -121,7 +127,6 @@ c_binary('cf2',
       '-DUSE_STDPERIPH_DRIVER',
     ],
   },
-
   local = {
     'link_flags': [
       '-T %(ROOT)s/scripts/%(PROCESSOR)s/linker/FLASH_CLOAD.ld',
