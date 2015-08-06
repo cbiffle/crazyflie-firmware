@@ -22,9 +22,6 @@ includes = [
   'lib/FreeRTOS/include',
   'lib/FreeRTOS/portable/%(freertos_port)s',
 
-  'lib/CMSIS/STM32F4xx/Include',
-  'lib/CMSIS/Include',
-
   'lib/STM32F4xx_StdPeriph_Driver/inc',
 
   'lib/STM32_CPAL_Driver/inc',
@@ -37,9 +34,6 @@ includes = [
 c_binary('cf2',
   environment = 'cf2',
   sources = [
-    'lib/CMSIS/STM32F4xx/Source/startup_stm32f40xx.s',
-    'lib/CMSIS/STM32F4xx/Source/system_stm32f4xx.c',
-
     'init/main.c',
 
     'platform/%(platform)s/platform_%(platform)s.c',
@@ -133,6 +127,11 @@ c_binary('cf2',
     'lib/STM32_USB_Device_Library/Core/src/usbd_req.c',
   ],
 
+  deps = [
+    '//lib/CMSIS',
+    '//lib/CMSIS:startup',
+  ],
+
   extra = {
     'c_flags': ['-I %(ROOT)s/' + inc for inc in includes] + [
       '-DSTM32F4XX',
@@ -144,7 +143,6 @@ c_binary('cf2',
 
   local = {
     'link_flags': [
-      '-nostartfiles',
       '-T %(ROOT)s/scripts/%(PROCESSOR)s/linker/FLASH_CLOAD.ld',
       '-L %(ROOT)s/scripts/%(PROCESSOR)s/linker',
     ],
