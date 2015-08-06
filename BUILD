@@ -98,6 +98,7 @@ c_library('cf2lib',
     '//utils:core',
     '//utils:version',
     '//drivers:led',
+    '//drivers:maxsonar',
   ],
 )
 

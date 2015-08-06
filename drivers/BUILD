@@ -16,3 +16,15 @@ c_library('led',
     '//lib/FreeRTOS',
   ],
 )
+
+c_library('maxsonar',
+  sources = [
+    'src/maxsonar.c',
+  ],
+  deps = [
+    ':headers',
+    '//modules:log_decl',
+    '//deck',
+  ],
+)
+
