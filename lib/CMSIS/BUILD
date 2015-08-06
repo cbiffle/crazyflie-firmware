@@ -29,4 +29,7 @@ c_library('startup',
     'STM32F4xx/Source/startup_stm32f40xx.s',
     'STM32F4xx/Source/system_stm32f4xx.c',
   ],
+  deps = [
+    '//lib/STM32F4xx_StdPeriph_Driver',
+  ],
 ) 

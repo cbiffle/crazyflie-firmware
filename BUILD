@@ -18,8 +18,6 @@ includes = [
   'modules/interface',
   'utils/interface',
   
-  'lib/STM32F4xx_StdPeriph_Driver/inc',
-
   'lib/STM32_CPAL_Driver/inc',
   'lib/STM32_CPAL_Driver/devices/stm32f4xx',
 
@@ -80,17 +78,6 @@ c_library('cf2lib',
     'drivers/src/uart_syslink.c',
     'drivers/src/ws2812.c',
 
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_misc.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c',
-    'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c',
-
     'lib/STM32_CPAL_Driver/devices/stm32f4xx/cpal_i2c_hal_stm32f4xx.c',
     'lib/STM32_CPAL_Driver/src/cpal_hal.c',
     'lib/STM32_CPAL_Driver/src/cpal_i2c.c',
@@ -106,6 +93,7 @@ c_library('cf2lib',
 
   deps = [
     '//lib/CMSIS',
+    '//lib/STM32F4xx_StdPeriph_Driver',
     '//lib/FreeRTOS',
     '//deck',
     '//utils:core',

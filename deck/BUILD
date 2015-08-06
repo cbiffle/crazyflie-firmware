@@ -5,7 +5,8 @@ c_library('deck',
     'api/deck_digital.c',
   ],
   deps = [
-    '//config:stm32',
+    '//lib/CMSIS',
+    '//lib/STM32F4xx_StdPeriph_Driver',
   ],
   local = {
     'c_flags': [
