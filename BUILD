@@ -13,7 +13,6 @@ includes = [
   'config',
   'platform',
 
-  'deck/interface',
   'drivers/interface',
   'hal/interface',
   'modules/interface',
@@ -79,10 +78,6 @@ c_binary('cf2',
     'modules/src/system.c',
     'modules/src/worker.c',
 
-    'deck/api/deck_analog.c',
-    'deck/api/deck_constants.c',
-    'deck/api/deck_digital.c',
-
     'drivers/src/ak8963.c',
     'drivers/src/eeprom.c',
     'drivers/src/i2cdev_%(processor)s.c',
@@ -130,6 +125,7 @@ c_binary('cf2',
   deps = [
     '//lib/CMSIS',
     '//lib/CMSIS:startup',
+    '//deck',
   ],
 
   extra = {
