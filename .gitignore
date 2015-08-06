@@ -8,3 +8,8 @@ bin/*
 config.mk
 cflie.*
 version.c
+
+.swp
+.*.swp
+
+build/
