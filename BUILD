@@ -18,9 +18,6 @@ includes = [
   'modules/interface',
   'utils/interface',
   
-  'lib/FreeRTOS/include',
-  'lib/FreeRTOS/portable/%(freertos_port)s',
-
   'lib/STM32F4xx_StdPeriph_Driver/inc',
 
   'lib/STM32_CPAL_Driver/inc',
@@ -89,15 +86,6 @@ c_binary('cf2',
     'drivers/src/uart_syslink.c',
     'drivers/src/ws2812.c',
 
-    'lib/FreeRTOS/list.c',
-    'lib/FreeRTOS/queue.c',
-    'lib/FreeRTOS/tasks.c',
-    'lib/FreeRTOS/timers.c',
-
-    'lib/FreeRTOS/portable/%(freertos_port)s/port.c',
-
-    'lib/FreeRTOS/portable/MemMang/heap_4.c',
-
     'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c',
     'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c',
     'lib/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c',
@@ -125,6 +113,7 @@ c_binary('cf2',
   deps = [
     '//lib/CMSIS',
     '//lib/CMSIS:startup',
+    '//lib/FreeRTOS',
     '//deck',
   ],
 
