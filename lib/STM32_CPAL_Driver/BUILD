@@ -22,6 +22,13 @@ c_library('STM32_CPAL_Driver',
     ':headers',
     '//lib/CMSIS',
   ],
+  using = {
+    'link_flags': [
+      '-u CPAL_I2C_TXTC_UserCallback',
+      '-u CPAL_I2C_RXTC_UserCallback',
+      '-u CPAL_I2C_ERR_UserCallback',
+    ],
+  },
 ).extend_when(lambda e: e.get('processor') == 'f405',
   sources = [
     'devices/stm32f4xx/cpal_i2c_hal_stm32f4xx.c',
