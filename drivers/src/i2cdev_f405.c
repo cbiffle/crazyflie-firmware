@@ -31,14 +31,9 @@
 
 #include "i2cdev.h"
 
-#include "nvicconf.h"
-
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "task.h"
-
-#include "led.h"
-#include "ledseq.h"
 
 #include "debug.h"
 #include "cpal.h"

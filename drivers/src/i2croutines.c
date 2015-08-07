@@ -26,7 +26,6 @@
 #include "semphr.h"
 
 #include "i2cdev.h"
-#include "nvicconf.h"
 
 extern xSemaphoreHandle i2cdevDmaEventI2c1;
 extern xSemaphoreHandle i2cdevDmaEventI2c2;
