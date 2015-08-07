@@ -30,3 +30,15 @@ c_library('version',  # HACK
   ],
   deps = [ ':utils_headers' ],
 ) 
+
+c_library('configblockeeprom',
+  sources = [
+    'src/configblockeeprom.c',
+  ],
+  deps = [
+    ':utils_headers',
+    '//config:stm32',
+    '//drivers:eeprom',
+    '//drivers:i2c',
+  ],
+)

@@ -42,8 +42,6 @@ c_library('cf2lib',
     'hal/src/usbd_desc.c',
     'hal/src/usblink.c',
 
-    'utils/src/configblockeeprom.c',
-
     'modules/src/commander.c',
     'modules/src/comm.c',
     'modules/src/console.c',
@@ -64,7 +62,6 @@ c_library('cf2lib',
     'modules/src/worker.c',
 
     'drivers/src/ak8963.c',
-    'drivers/src/eeprom.c',
     'drivers/src/lps25h.c',
     'drivers/src/motors.c',
     'drivers/src/mpu6500.c',
@@ -88,6 +85,7 @@ c_library('cf2lib',
     '//drivers:led',
     '//drivers:maxsonar',
     '//drivers:i2c',
+    '//utils:configblockeeprom',
   ],
 )
 

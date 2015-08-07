@@ -39,3 +39,15 @@ c_library('i2c',
     '//lib/STM32_CPAL_Driver',
   ],
 )
+
+c_library('eeprom',
+  sources = [
+    'src/eeprom.c',
+  ],
+  deps = [
+    ':headers',
+    ':i2c',
+    '//lib/FreeRTOS',
+    '//utils:core',
+  ],
+)
