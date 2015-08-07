@@ -109,17 +109,6 @@ c_binary('cf2',
     '//lib/CMSIS:startup',
   ],
   extra = {
-    'c_flags': ['-I %(ROOT)s/' + inc for inc in includes] + [
-      '-DSTM32F4XX',
-      '-DSTM32F40_41xxx',
-      '-DHSE_VALUE=8000000',
-      '-DUSE_STDPERIPH_DRIVER',
-    ],
-  },
-  local = {
-    'link_flags': [
-      '-T %(ROOT)s/scripts/%(PROCESSOR)s/linker/FLASH_CLOAD.ld',
-      '-L %(ROOT)s/scripts/%(PROCESSOR)s/linker',
-    ],
+    'c_flags': ['-I %(ROOT)s/' + inc for inc in includes],
   },
 )

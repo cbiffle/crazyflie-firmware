@@ -2,6 +2,8 @@ c_library('CMSIS',
   using = {
     'c_flags': [
       '-I %(ROOT)s/lib/CMSIS/Include',
+      '-DHSE_VALUE=%(hse_hz)s',
+      '-DUSE_STDPERIPH_DRIVER',
     ],
   },
   deps = [
