@@ -51,3 +51,12 @@ c_library('eeprom',
     '//utils:core',
   ],
 )
+
+c_library('ws2812',
+  sources = [ 'src/ws2812.c' ],
+  deps = [
+    ':headers',
+    '//lib/CMSIS',
+    '//lib/FreeRTOS',
+  ],
+)

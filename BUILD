@@ -67,7 +67,6 @@ c_library('cf2lib',
     'drivers/src/mpu6500.c',
     'drivers/src/nvic.c',
     'drivers/src/uart_syslink.c',
-    'drivers/src/ws2812.c',
   ],
 
   deps = [
@@ -85,6 +84,7 @@ c_library('cf2lib',
     '//drivers:led',
     '//drivers:maxsonar',
     '//drivers:i2c',
+    '//drivers:ws2812',
     '//utils:configblockeeprom',
   ],
 )
