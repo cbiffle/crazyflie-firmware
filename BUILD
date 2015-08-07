@@ -19,11 +19,14 @@ includes = [
   'utils/interface',
 ]
 
+c_library('headers',
+  using = {
+    'c_flags': ['-I %(ROOT)s/' + inc for inc in includes],
+  },
+)
+
 c_library('cf2lib',
-
   sources = [
-    'init/main.c',
-
     'platform/%(platform)s/platform_%(platform)s.c',
 
     'hal/src/freeRTOSdebug.c',
@@ -72,6 +75,7 @@ c_library('cf2lib',
   ],
 
   deps = [
+    ':headers',
     '//lib/CMSIS',
     '//lib/STM32F4xx_StdPeriph_Driver',
     '//lib/FreeRTOS',
@@ -90,7 +94,7 @@ c_library('cf2lib',
 c_binary('cf2',
   environment = 'cf2',
   deps = [
-    ':cf2lib',
+    '//init',
     '//lib/CMSIS:startup',
   ],
   extra = {
