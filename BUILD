@@ -18,9 +18,6 @@ includes = [
   'modules/interface',
   'utils/interface',
   
-  'lib/STM32_CPAL_Driver/inc',
-  'lib/STM32_CPAL_Driver/devices/stm32f4xx',
-
   'lib/STM32_USB_Device_Library/Core/inc',
   'lib/STM32_USB_OTG_Driver/inc',
 ]
@@ -76,11 +73,6 @@ c_library('cf2lib',
     'drivers/src/uart_syslink.c',
     'drivers/src/ws2812.c',
 
-    'lib/STM32_CPAL_Driver/devices/stm32f4xx/cpal_i2c_hal_stm32f4xx.c',
-    'lib/STM32_CPAL_Driver/src/cpal_hal.c',
-    'lib/STM32_CPAL_Driver/src/cpal_i2c.c',
-    'lib/STM32_CPAL_Driver/src/cpal_usercallback_template.c',
-
     'lib/STM32_USB_OTG_Driver/src/usb_core.c',
     'lib/STM32_USB_OTG_Driver/src/usb_dcd.c',
 
@@ -93,6 +85,7 @@ c_library('cf2lib',
     '//lib/CMSIS',
     '//lib/STM32F4xx_StdPeriph_Driver',
     '//lib/FreeRTOS',
+    '//lib/STM32_CPAL_Driver',
     '//deck',
     '//utils:cfassert',
     '//utils:core',
