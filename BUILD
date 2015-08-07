@@ -19,7 +19,6 @@ includes = [
   'utils/interface',
   
   'lib/STM32_USB_Device_Library/Core/inc',
-  'lib/STM32_USB_OTG_Driver/inc',
 ]
 
 c_library('cf2lib',
@@ -73,9 +72,6 @@ c_library('cf2lib',
     'drivers/src/uart_syslink.c',
     'drivers/src/ws2812.c',
 
-    'lib/STM32_USB_OTG_Driver/src/usb_core.c',
-    'lib/STM32_USB_OTG_Driver/src/usb_dcd.c',
-
     'lib/STM32_USB_Device_Library/Core/src/usbd_core.c',
     'lib/STM32_USB_Device_Library/Core/src/usbd_ioreq.c',
     'lib/STM32_USB_Device_Library/Core/src/usbd_req.c',
@@ -86,6 +82,7 @@ c_library('cf2lib',
     '//lib/STM32F4xx_StdPeriph_Driver',
     '//lib/FreeRTOS',
     '//lib/STM32_CPAL_Driver',
+    '//lib/STM32_USB_OTG_Driver',
     '//deck',
     '//utils:cfassert',
     '//utils:core',
