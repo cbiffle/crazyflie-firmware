@@ -65,7 +65,6 @@ c_library('cf2lib',
 
     'drivers/src/ak8963.c',
     'drivers/src/eeprom.c',
-    'drivers/src/i2cdev_%(processor)s.c',
     'drivers/src/lps25h.c',
     'drivers/src/motors.c',
     'drivers/src/mpu6500.c',
@@ -88,6 +87,7 @@ c_library('cf2lib',
     '//utils:version',
     '//drivers:led',
     '//drivers:maxsonar',
+    '//drivers:i2c',
   ],
 )
 
