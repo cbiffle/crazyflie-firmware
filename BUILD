@@ -17,8 +17,6 @@ includes = [
   'hal/interface',
   'modules/interface',
   'utils/interface',
-  
-  'lib/STM32_USB_Device_Library/Core/inc',
 ]
 
 c_library('cf2lib',
@@ -71,10 +69,6 @@ c_library('cf2lib',
     'drivers/src/nvic.c',
     'drivers/src/uart_syslink.c',
     'drivers/src/ws2812.c',
-
-    'lib/STM32_USB_Device_Library/Core/src/usbd_core.c',
-    'lib/STM32_USB_Device_Library/Core/src/usbd_ioreq.c',
-    'lib/STM32_USB_Device_Library/Core/src/usbd_req.c',
   ],
 
   deps = [
@@ -83,6 +77,7 @@ c_library('cf2lib',
     '//lib/FreeRTOS',
     '//lib/STM32_CPAL_Driver',
     '//lib/STM32_USB_OTG_Driver',
+    '//lib/STM32_USB_Device_Library',
     '//deck',
     '//utils:cfassert',
     '//utils:core',
